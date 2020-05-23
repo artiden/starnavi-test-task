@@ -113,7 +113,7 @@ def user_activity():
     return {"last_login": user.last_login, "last_activity": user.last_activity}
 
 @app.route('/api/activity', methods=['GET'])
-#@jwt_required
+@jwt_required
 def activity():
     today = str(datetime.date.today())
     date_from = request.args.get("date_from", today)
